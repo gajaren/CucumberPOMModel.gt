@@ -12,7 +12,7 @@ import junit.framework.Assert;
 
 public class LoginStepDefinition extends TestBase{
 	
-	LoginPage loginpage= new LoginPage();
+	LoginPage loginpage;
 	HomePage homepage;
 	TestUtils testutils= new TestUtils();
 	
@@ -24,11 +24,21 @@ public class LoginStepDefinition extends TestBase{
 	    TestBase.initialize();
 	}
 
-	@When("^User enters \"([^\"]*)\" and \"([^\"]*)\" and clicks on login button$")
+	@When("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
 	public void user_enters_username_and_password_and_clicks_on_login_button(String username,String password){
-	    //loginpage= new LoginPage();
+	    loginpage= new LoginPage();
 		loginpage.enterUsernamePassword(username,password);
-	    homepage=loginpage.clickLoginButton();
+	}
+
+	@When("^User enters Invalid \"([^\"]*)\" and \"([^\"]*)\"$")
+	public void user_enters_Invalid_username_and_password(String username, String password) {
+		loginpage= new LoginPage();
+		loginpage.enterUsernamePassword(username,password);
+	}
+	
+	@When("^clicks on login button$")
+	public void clicks_on_login_button() {
+		homepage=loginpage.clickLoginButton();
 	}
 
 	@Then("^Home page is displayed$")

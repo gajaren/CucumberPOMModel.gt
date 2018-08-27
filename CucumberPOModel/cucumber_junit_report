@@ -1,34 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite failures="2" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="73.312967">
-<testcase classname="Free CRM Login Feature" name="Free CRM Valid Login Feature" time="23.873821">
-<failure message="java.lang.NullPointerException&#13;&#10;&#9;at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)&#13;&#10;&#9;at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)&#13;&#10;&#9;at com.sun.proxy.$Proxy15.sendKeys(Unknown Source)&#13;&#10;&#9;at com.crm.Pages.LoginPage.enterUsernamePassword(LoginPage.java:29)&#13;&#10;&#9;at com.crm.StepDefinition.LoginStepDefinition.user_enters_username_and_password_and_clicks_on_login_button(LoginStepDefinition.java:30)&#13;&#10;&#9;at ✽.When User enters &quot;gajaren&quot; and &quot;*Test123#&quot; and clicks on login button(Login.feature:6)&#13;&#10;"><![CDATA[Given User is on login page.................................................passed
-When User enters "gajaren" and "*Test123#" and clicks on login button.......failed
-Then Home page is displayed.................................................skipped
-Then check contacts tab on home page........................................skipped
-Then Close the browser......................................................skipped
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="54.822817">
+<testcase classname="Free CRM Contacts Feature file" name="Add new contacts" time="54.822817">
+<failure message="java.lang.NullPointerException&#13;&#10;&#9;at com.crm.StepDefinition.ContactsStepDefinition.new_contact_is_added(ContactsStepDefinition.java:65)&#13;&#10;&#9;at ✽.Then new contact is added(src/test/resources/feature/Contacts.feature:12)&#13;&#10;"><![CDATA[Given User is on Home page..................................................passed
+When User clicks on new contact from Contact dropdown.......................passed
+When User fills form and click save.........................................passed
+Then new contact is added...................................................failed
+Then close the browser......................................................skipped
 
 StackTrace:
 java.lang.NullPointerException
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy15.sendKeys(Unknown Source)
-	at com.crm.Pages.LoginPage.enterUsernamePassword(LoginPage.java:29)
-	at com.crm.StepDefinition.LoginStepDefinition.user_enters_username_and_password_and_clicks_on_login_button(LoginStepDefinition.java:30)
-	at ✽.When User enters "gajaren" and "*Test123#" and clicks on login button(Login.feature:6)
-]]></failure>
-</testcase>
-<testcase classname="Free CRM Login Feature" name="Free CRM Invalid login" time="49.439146">
-<failure message="junit.framework.AssertionFailedError&#13;&#10;&#9;at junit.framework.Assert.fail(Assert.java:55)&#13;&#10;&#9;at junit.framework.Assert.assertTrue(Assert.java:22)&#13;&#10;&#9;at junit.framework.Assert.assertTrue(Assert.java:31)&#13;&#10;&#9;at com.crm.StepDefinition.LoginStepDefinition.user_not_logged_in_and_stays_on_the_same_page(LoginStepDefinition.java:64)&#13;&#10;&#9;at ✽.Then User not logged in and stays on the same page(Login.feature:15)&#13;&#10;"><![CDATA[Given User is on login page.................................................passed
-When User enters Invalid username and password and clicks on login button...passed
-Then User not logged in and stays on the same page..........................failed
-Then Close the browser......................................................skipped
-
-StackTrace:
-junit.framework.AssertionFailedError
-	at junit.framework.Assert.fail(Assert.java:55)
-	at junit.framework.Assert.assertTrue(Assert.java:22)
-	at junit.framework.Assert.assertTrue(Assert.java:31)
-	at com.crm.StepDefinition.LoginStepDefinition.user_not_logged_in_and_stays_on_the_same_page(LoginStepDefinition.java:64)
-	at ✽.Then User not logged in and stays on the same page(Login.feature:15)
+	at com.crm.StepDefinition.ContactsStepDefinition.new_contact_is_added(ContactsStepDefinition.java:65)
+	at ✽.Then new contact is added(src/test/resources/feature/Contacts.feature:12)
 ]]></failure>
 </testcase>
 </testsuite>

@@ -27,6 +27,12 @@ public class ContactsPage extends TestBase{
 	@FindBy (xpath = "//td[contains(text(),'Contact created')]")
 	WebElement contactCreated;
 	
+	@FindBy (css = "input[name='client_lookup']")
+	WebElement companyText;
+	
+	@FindBy (id = "company_position")
+	WebElement positionText;
+	
 	public ContactsPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -53,6 +59,14 @@ public class ContactsPage extends TestBase{
 	
 	public String contactCreatedMSG() {
 		return contactCreated.getText();
+	}
+	
+	public void enterCompanyName(String company) {
+		companyText.sendKeys(company);
+	}
+	
+	public void enterPosition(String position) {
+		positionText.sendKeys(position);
 	}
 
 }

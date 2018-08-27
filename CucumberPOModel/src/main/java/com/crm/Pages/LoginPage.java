@@ -25,11 +25,17 @@ public class LoginPage extends TestBase{
 	public String getTitleOfLoginPage() {
 		return driver.getTitle();
 	}
+	
 	public void enterUsernamePassword(String user_name,String pass_word) {
 		username.sendKeys(user_name);
 		password.sendKeys(pass_word);
 		//username.sendKeys(prop.getProperty("username"));
 		//password.sendKeys(prop.getProperty("password"));
+	}
+	
+	public void enterUsernamePassword() {
+		username.sendKeys(prop.getProperty("username"));
+		password.sendKeys(prop.getProperty("password"));
 	}
 	
 	public void enterInvalidUsernamePassword() {
